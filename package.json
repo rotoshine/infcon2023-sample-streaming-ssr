@@ -1,0 +1,54 @@
+{
+  "name": "streaming-ssr",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "dev": "tsx ./src/_dev.ts",
+    "start": "NODE_ENV=production node ./dist/_start.mjs",
+    "build": "yarn clean && concurrently \"yarn:build:*\"",
+    "build:server": "node esbuild.config.js",
+    "build:vite": "ENABLE_SENTRY=true vite build --outDir ../dist --ssrManifest",
+    "build:vite-ssr": "vite build -c vite.config.ts --outDir ../dist --ssr ./entry-server.tsx",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "resolutions": {
+    "esbuild": "^0.18.11"
+  },
+  "dependencies": {
+    "@fastify/middie": "^8.3.0",
+    "@fastify/static": "^6.10.2",
+    "@tanstack/react-query": "^4.32.0",
+    "concurrently": "^8.2.0",
+    "fastify": "^4.21.0",
+    "fastify-favicon": "^4.3.0",
+    "ky": "^0.33.3",
+    "ky-universal": "^0.12.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.5",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react-swc": "^3.3.2",
+    "autoprefixer": "^10.4.14",
+    "daisyui": "^3.5.0",
+    "eslint": "^8.45.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "postcss": "^8.4.27",
+    "prettier": "^3.0.0",
+    "tailwindcss": "^3.3.3",
+    "tsx": "^3.12.7",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-static-copy": "^0.17.0"
+  }
+}

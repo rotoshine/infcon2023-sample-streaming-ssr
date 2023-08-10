@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>인디뮤지션 사이트</title>
+  </head>
+  <body>
+    <div id="root">{{SSR_CONTENT}}</div>
+    <script type="module" src="/entry-client.tsx"></script>
+    <script>
+      window.__REACT_QUERY_STATE__ = {{INITIAL_STATE}};
+    </script>
+  </body>
+</html>

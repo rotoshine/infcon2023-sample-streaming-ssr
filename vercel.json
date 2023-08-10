@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/dist/_serverless.mjs"
+    }
+  ]
+}

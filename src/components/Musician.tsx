@@ -1,11 +1,18 @@
 import useFetchMusician from "@/hooks/useFetchMusician";
+import { useSearchParams } from "react-router-dom";
 
 interface Props {
   slug: string;
 }
 
 export default function Musician({ slug }: Props) {
-  const { data } = useFetchMusician(slug);
+  const [searchParams] = useSearchParams();
+  const { data } = useFetchMusician(
+    slug,
+    searchParams.get("delayMs")
+      ? parseInt(searchParams.get("delayMs") as string)
+      : undefined,
+  );
 
   if (!data) {
     return null;

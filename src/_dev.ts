@@ -1,4 +1,4 @@
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 import FastifyStatic from "@fastify/static";
 import Fastify from "fastify";
 import FastifyMiddie from "@fastify/middie";

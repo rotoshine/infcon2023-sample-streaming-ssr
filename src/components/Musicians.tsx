@@ -1,8 +1,13 @@
 import useFetchMusicians from "@/hooks/useFetchMusicians";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 export default function Musicians() {
-  const { data } = useFetchMusicians();
+  const [searchParams] = useSearchParams();
+  const { data } = useFetchMusicians(
+    searchParams.get("delayMs")
+      ? parseInt(searchParams.get("delayMs") as string)
+      : undefined,
+  );
 
   return (
     <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-8 p-6 md:p-0">

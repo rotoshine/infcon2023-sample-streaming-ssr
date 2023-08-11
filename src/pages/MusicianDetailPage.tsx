@@ -8,7 +8,13 @@ export default function MusicianDetailPage() {
 
   return (
     <Layout>
-      <Suspense fallback={<span className="loading loading-dots loading-lg" />}>
+      <Suspense
+        fallback={
+          <div className="flex justify-center mt-20">
+            <span className="loading loading-dots loading-lg" />
+          </div>
+        }
+      >
         <Musician slug={slug} />
       </Suspense>
     </Layout>

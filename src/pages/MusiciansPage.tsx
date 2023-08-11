@@ -7,7 +7,11 @@ export default function MusiciansPage() {
     <Layout>
       <div className="min-h-screen container pt-4 mx-auto border-neutral-content">
         <Suspense
-          fallback={<span className="loading loading-dots loading-lg" />}
+          fallback={
+            <div className="flex justify-center mt-20">
+              <span className="loading loading-dots loading-lg" />
+            </div>
+          }
         >
           <Musicians />
         </Suspense>

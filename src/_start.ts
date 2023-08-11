@@ -1,14 +1,18 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
+import dotenv from 'dotenv';
 import FastifyStatic from "@fastify/static";
 import Fastify from "fastify";
 import fs from "fs/promises";
 import path from "path";
 import FastifyFavicon from "fastify-favicon";
 
+dotenv.config()
 const HOST = "0.0.0.0";
-const PORT = 9999;
+const PORT = process.env.PORT ? parseInt(process.env.PORT) : 9999;
 
-const fastify = Fastify();
+const fastify = Fastify({
+  ignoreTrailingSlash: true,
+});
 
 // @ts-ignore
 // eslint-disable-next-line

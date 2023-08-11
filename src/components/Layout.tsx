@@ -13,9 +13,6 @@ export default function Layout({ children }: Props) {
         <Link className="btn btn-ghost normal-case text-xl" to="/musicians/">
           뮤지션 목록
         </Link>
-        <Link className="btn btn-ghost normal-case text-xl" to="/live/">
-          공연 목록
-        </Link>
       </nav>
       <main>{children}</main>
     </>

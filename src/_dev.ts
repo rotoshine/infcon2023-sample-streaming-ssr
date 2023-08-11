@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 import FastifyStatic from "@fastify/static";
 import Fastify from "fastify";
 import FastifyMiddie from "@fastify/middie";
@@ -6,10 +7,13 @@ import path from "path";
 import { createServer as createViteServer } from "vite";
 import FastifyFavicon from "fastify-favicon";
 
+dotenv.config();
 const HOST = "0.0.0.0";
-const PORT = 9999;
+const PORT = process.env.PORT ? parseInt(process.env.PORT) : 9999;
 
-const fastify = Fastify();
+const fastify = Fastify({
+  ignoreTrailingSlash: true,
+});
 await fastify.register(FastifyMiddie);
 
 const vite = await createViteServer({

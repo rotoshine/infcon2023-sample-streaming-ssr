@@ -22,6 +22,7 @@
     "@fastify/static": "^6.10.2",
     "@tanstack/react-query": "^4.32.0",
     "concurrently": "^8.2.0",
+    "dotenv": "^16.3.1",
     "fastify": "^4.21.0",
     "fastify-favicon": "^4.3.0",
     "ky": "^0.33.3",

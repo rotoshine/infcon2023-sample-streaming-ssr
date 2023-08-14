@@ -1,27 +1,19 @@
-# React + TypeScript + Vite
+# infcon 2023 SSR의 기쁨과 슬픔 발표자료 - Streaming SSR
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CSR로 구현된 샘플 페이지 입니다. `vite + react + typescript + fastify` 기반으로 구현되어 있습니다.`
 
-Currently, two official plugins are available:
+## 실행법
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- `yarn install`
+- `yarn build && yarn start`
 
-## Expanding the ESLint configuration
+## Demo Page
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- https://streaming-ssr.infcon2023.roto.codes/
+  - 뮤지션 목록, 상세 페이지에 delayMs 파라메터를 주면 지연 상황을 시뮬레이트 할 수 있습니다.
+  - 예) https://streaming-ssr.infcon2023.roto.codes/musicians/?delayMs=5000
 
-- Configure the top-level `parserOptions` property like this:
+## 그외 프로젝트
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- CSR 구현 샘플: https://github.com/rotoshine/infcon2023-sample-csr
+- SSR 구현 샘플: https://github.com/rotoshine/infcon2023-sample-ssr

@@ -13,7 +13,7 @@ const external = [
 ];
 
 build({
-  entryPoints: ["./src/_start.ts", "./src/_serverless.ts"],
+  entryPoints: ["./src/_start.ts"],
   outdir: "dist",
   target: "node18",
   platform: "node",
